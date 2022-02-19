@@ -4,8 +4,8 @@ import java.lang.Math;
 
 public class MatrixGenerator implements Runnable {
 
-    public int[][] ownMatrix;
-    public int ownSize, ownRange, ownSign;
+    private int[][] ownMatrix;
+    private int ownSize, ownRange, ownSign;
 
     MatrixGenerator() {
         ownMatrix = null;
