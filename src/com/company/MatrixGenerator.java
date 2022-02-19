@@ -1,7 +1,7 @@
 package com.company;
-
 import java.lang.Math;
 
+// class, that generate matrix in multithreading
 public class MatrixGenerator implements Runnable {
 
     private int[][] ownMatrix;
@@ -14,14 +14,17 @@ public class MatrixGenerator implements Runnable {
         ownSign = 0;
     }
 
-    public void setParameters(int size, int range, int sign) {
+    MatrixGenerator(int size, int range, int sign) {
+        ownMatrix = null;
         ownSize = size;
         ownRange = range;
         ownSign = sign;
     }
 
+    //Method, that returns generated matrix
     public int[][] getMatrix() { return ownMatrix; }
 
+    //Method, that generate matrix
     private void generator(int size, int range, int sign) {
         int [][] matrix = new int[size][size];
         if (sign == 0) {
@@ -40,6 +43,7 @@ public class MatrixGenerator implements Runnable {
         ownMatrix = matrix;
     }
 
+    //Method, that print matrix
     public void print() {
         for (int i = 0; i < ownMatrix.length; i++) {
             for (int j = 0; j < ownMatrix.length; j++) {

@@ -19,6 +19,7 @@ public class MatrixMultiplicator implements Runnable {
         multiplicateMatrix = new int[size][size];
     }
 
+    //Method, that print result matrix
     public void printResult() {
         for (int i = 0; i < multiplicateMatrix.length; i++) {
             for (int j = 0; j < multiplicateMatrix.length; j++) {
@@ -32,6 +33,10 @@ public class MatrixMultiplicator implements Runnable {
 
     @Override
     public void run() {
+        if (ownMatrix2.length != ownMatrix1.length) {
+            System.out.println("lengths must be equal");
+            return;
+        }
         synchronized (this) {
             try { Thread.sleep(1); } catch (InterruptedException ex) {}
             line++;

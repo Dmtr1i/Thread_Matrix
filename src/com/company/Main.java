@@ -3,10 +3,8 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        MatrixGenerator matrixA = new MatrixGenerator();
-        matrixA.setParameters(100, 10, 0);
-        MatrixGenerator matrixB = new MatrixGenerator();
-        matrixB.setParameters(100, 10, 0);
+        MatrixGenerator matrixA = new MatrixGenerator(3, 10, 0);
+        MatrixGenerator matrixB = new MatrixGenerator(3, 10, 0);
         Thread a = new Thread(matrixA);
         Thread b = new Thread(matrixB);
         a.start();
