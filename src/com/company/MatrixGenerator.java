@@ -58,6 +58,5 @@ public class MatrixGenerator implements Runnable {
     @Override
     public void run() {
         generator(ownSize, ownRange, ownSign);
-        //print();
     }
 }
