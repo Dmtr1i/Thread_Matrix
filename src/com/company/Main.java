@@ -14,11 +14,13 @@ public class Main {
         matrixA.print();
         matrixB.print();
         MatrixMultiplicator multiply = new MatrixMultiplicator(matrixA.getMatrix(), matrixB.getMatrix());
+        Thread threads[] = new Thread[matrixA.getMatrix().length];
         for (int i = 0; i < matrixA.getMatrix().length; i++) {
             Thread k = new Thread(multiply);
             k.start();
-            try{ k.join(); } catch(InterruptedException e) { System.out.println("Error in multiplicate matrix"); }
+            threads[i] = k;
         }
+        for (int i = 0; i < matrixA.getMatrix().length; i++) try{ threads[i].join(); } catch(InterruptedException e) { System.out.println("Error in multiplicate matrix"); }
         multiply.printResult();
     }
 }

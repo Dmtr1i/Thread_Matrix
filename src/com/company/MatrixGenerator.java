@@ -51,8 +51,7 @@ public class MatrixGenerator implements Runnable {
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println();
+        System.out.println("\n");
     }
 
     @Override
